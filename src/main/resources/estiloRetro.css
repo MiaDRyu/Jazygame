@@ -1,498 +1,438 @@
 /* ===============================================
-   ARCHIVO: estiloRetro.css
-   DISEÑO CYBERPUNK VIBRANTE Y ATRACTIVO
+   ARCHIVO: estiloModerno.css
+   DISEÑO LIMPIO Y PROFESIONAL CON ROBOTO
    =============================================== */
 
-/* Fuente pixelada principal */
-@font-face {
-    font-family: '8BIT WONDER Nominal';
-    src: url('../fonts/8bitwonder-webfont.woff2') format('woff2'),
-         url('../fonts/8bitwonder-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+/* Importar fuente Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* ===============================================
+   VARIABLES CSS PARA COLORES CONSISTENTES
+   =============================================== */
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --secondary-color: #64748b;
+    --success-color: #059669;
+    --success-hover: #047857;
+    --warning-color: #d97706;
+    --warning-hover: #b45309;
+    --danger-color: #dc2626;
+    --danger-hover: #b91c1c;
+    --background-primary: #ffffff;
+    --background-secondary: #f8fafc;
+    --background-tertiary: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-light: #64748b;
+    --border-color: #cbd5e1;
+    --border-focus: #3b82f6;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(0, 0, 0, 0.25);
 }
 
 /* ===============================================
-   CONTENEDORES BASE - FONDOS DINÁMICOS
+   CONTENEDORES BASE
    =============================================== */
 
-/* Contenedor principal con gradiente animado */
 .retro-container {
-    -fx-background-color: linear-gradient(135deg, #0a0a0a 0%, #1a0033 50%, #000a1a 100%);
-    -fx-padding: 25;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-text-fill: #00ff41;
-    -fx-border-color: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
-    -fx-border-width: 3;
-    -fx-effect: dropshadow(gaussian, #00ffff, 20, 0.3, 0, 0);
+    background-color: var(--background-primary);
+    padding: 2rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-light);
 }
 
-/* VBox con efectos especiales */
 .root-vbox {
-    -fx-background-color: linear-gradient(180deg, #0d0520 0%, #1a0d2e 50%, #0d0520 100%);
-    -fx-padding: 30;
-    -fx-spacing: 20;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-text-fill: #00ff41;
-    -fx-border-color: #ff0080;
-    -fx-border-width: 2;
-    -fx-effect: dropshadow(gaussian, #ff0080, 15, 0.4, 0, 0);
+    background-color: var(--background-secondary);
+    padding: 2.5rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 8px 25px var(--shadow-medium);
 }
 
 /* ===============================================
-   TÍTULOS IMPACTANTES
+   TÍTULOS MODERNOS
    =============================================== */
 
-/* Título del juego con efectos espectaculares */
 .game-title {
-    -fx-font-size: 36px;
-    -fx-font-weight: bold;
-    -fx-text-fill: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
-    -fx-effect: dropshadow(gaussian, #00ffff, 25, 0.8, 0, 0),
-                innershadow(gaussian, #ff0080, 10, 0.5, 0, 0);
-    -fx-alignment: center;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-color: rgba(0, 255, 255, 0.1);
-    -fx-background-radius: 10;
-    -fx-padding: 15;
-    -fx-border-color: #00ffff;
-    -fx-border-width: 2;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    margin-bottom: 1rem;
 }
 
-/* Títulos de sección vibrantes */
 .section-title {
-    -fx-font-size: 24px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #00ff41;
-    -fx-effect: dropshadow(gaussian, #00ff41, 20, 0.7, 0, 0),
-                dropshadow(gaussian, #ff0080, 30, 0.3, 0, 0);
-    -fx-alignment: center;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-color: rgba(0, 255, 65, 0.1);
-    -fx-background-radius: 8;
-    -fx-padding: 10;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1rem;
 }
 
-/* Título con trofeo súper llamativo */
 .section-title-trophy {
-    -fx-font-size: 22px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #ffaa00;
-    -fx-effect: dropshadow(gaussian, #ffaa00, 25, 0.9, 0, 0),
-                dropshadow(gaussian, #ff0080, 35, 0.4, 0, 0);
-    -fx-alignment: center;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-color: linear-gradient(90deg, rgba(255, 170, 0, 0.2), rgba(255, 0, 128, 0.2));
-    -fx-background-radius: 12;
-    -fx-padding: 12;
-    -fx-border-color: #ffaa00;
-    -fx-border-width: 2;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--warning-color);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+    border-radius: 10px;
+    padding: 1.25rem;
+    border: 2px solid var(--warning-color);
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.2);
 }
 
-/* Título con disquete */
 .section-title-save {
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #00ffff;
-    -fx-effect: dropshadow(gaussian, #00ffff, 20, 0.8, 0, 0);
-    -fx-alignment: center;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-color: rgba(0, 255, 255, 0.15);
-    -fx-background-radius: 10;
-    -fx-padding: 10;
-    -fx-border-color: #00ffff;
-    -fx-border-width: 2;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: #dbeafe;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 2px solid var(--primary-color);
 }
 
-/* Expresión matemática destacada */
 .expression-label {
-    -fx-font-size: 28px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow(gaussian, #00ffff, 30, 1.0, 0, 0),
-                dropshadow(gaussian, #ff0080, 40, 0.5, 0, 0);
-    -fx-alignment: center;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-color: linear-gradient(135deg, rgba(0, 255, 255, 0.2), rgba(255, 0, 128, 0.2));
-    -fx-background-radius: 15;
-    -fx-padding: 20;
-    -fx-border-color: linear-gradient(45deg, #00ffff, #ff0080);
-    -fx-border-width: 3;
-    -fx-wrap-text: true;
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: 12px;
+    padding: 2rem;
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+    word-wrap: break-word;
 }
 
-/* Labels con más presencia */
 .retro-label, .profile-label {
-    -fx-font-size: 14px;
-    -fx-text-fill: #00ff41;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-effect: dropshadow(gaussian, #00ff41, 10, 0.5, 0, 0);
-    -fx-background-color: rgba(0, 255, 65, 0.1);
-    -fx-background-radius: 5;
-    -fx-padding: 5;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    background-color: var(--background-tertiary);
+    border-radius: 6px;
+    padding: 0.5rem;
 }
 
-/* Texto de instrucciones más legible */
 .instructions-text {
-    -fx-font-size: 12px;
-    -fx-text-fill: #ffffff;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-line-spacing: 4;
-    -fx-text-alignment: left;
-    -fx-fill: #ffffff;
-    -fx-effect: dropshadow(gaussian, #00ffff, 5, 0.3, 0, 0);
-    -fx-background-color: rgba(0, 255, 255, 0.05);
-    -fx-background-radius: 8;
-    -fx-padding: 15;
-    -fx-border-color: rgba(0, 255, 255, 0.3);
-    -fx-border-width: 1;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    text-align: left;
+    background-color: var(--background-secondary);
+    border-radius: 8px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
 }
 
 /* ===============================================
-   SISTEMA DE BOTONES ESPECTACULAR
+   SISTEMA DE BOTONES MODERNO
    =============================================== */
 
-/* Botones del menú con gradientes y animaciones */
 .menu-button {
-    -fx-background-color: linear-gradient(135deg, #1a0033 0%, #330066 50%, #1a0033 100%);
-    -fx-text-fill: #00ff41;
-    -fx-font-size: 16px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #00ff41;
-    -fx-border-width: 3;
-    -fx-padding: 15 25 15 25;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #00ff41, 15, 0.6, 0, 0);
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transition: all 0.2s ease;
 }
 
 .menu-button:hover {
-    -fx-background-color: linear-gradient(135deg, #00ff41 0%, #40ff80 50%, #00ff41 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #00ff41, 25, 0.9, 0, 0),
-                dropshadow(gaussian, #ff0080, 35, 0.4, 0, 0);
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
-    -fx-border-color: #ffffff;
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transform: translateY(-1px);
 }
 
-.menu-button:pressed {
-    -fx-background-color: #00ffff;
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #00ffff, 20, 0.8, 0, 0);
-    -fx-scale-x: 0.98;
-    -fx-scale-y: 0.98;
+.menu-button:active {
+    background-color: var(--primary-hover);
+    transform: translateY(0);
+    box-shadow: 0 2px 4px var(--shadow-light);
 }
 
-/* Botón principal súper destacado */
 .menu-button-primary {
-    -fx-background-color: linear-gradient(135deg, #ff0080 0%, #ff4080 25%, #ff0080 50%, #8000ff 75%, #ff0080 100%);
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 18px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 4;
-    -fx-padding: 20 30 20 30;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #ff0080, 30, 1.0, 0, 0),
-                innershadow(gaussian, #ffffff, 5, 0.3, 0, 0);
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.125rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    border: none;
+    padding: 1.25rem 2.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease;
 }
 
 .menu-button-primary:hover {
-    -fx-background-color: linear-gradient(135deg, #ffffff 0%, #00ffff 50%, #ffffff 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #ffffff, 40, 1.0, 0, 0),
-                dropshadow(gaussian, #ff0080, 50, 0.6, 0, 0);
-    -fx-scale-x: 1.08;
-    -fx-scale-y: 1.08;
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
 }
 
-/* Botones de opciones con efectos increíbles */
 .option-button {
-    -fx-background-color: linear-gradient(90deg, #001133 0%, #003366 50%, #001133 100%);
-    -fx-text-fill: #00ffff;
-    -fx-font-size: 14px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #00ffff;
-    -fx-border-width: 2;
-    -fx-padding: 12 18 12 18;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #00ffff, 12, 0.5, 0, 0);
-    -fx-background-radius: 6;
-    -fx-border-radius: 6;
-    -fx-alignment: center-left;
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: left;
+    transition: all 0.2s ease;
 }
 
 .option-button:hover {
-    -fx-background-color: linear-gradient(90deg, #00ffff 0%, #40ffff 50%, #00ffff 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #00ffff, 20, 0.8, 0, 0),
-                dropshadow(gaussian, #ffffff, 25, 0.4, 0, 0);
-    -fx-scale-x: 1.03;
-    -fx-scale-y: 1.03;
+    background-color: var(--background-secondary);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-/* Estados especiales para respuestas */
 .option-button-correct {
-    -fx-background-color: linear-gradient(90deg, #00ff41 0%, #80ff80 50%, #00ff41 100%);
-    -fx-text-fill: #000000;
-    -fx-border-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, #00ff41, 25, 1.0, 0, 0),
-                dropshadow(gaussian, #ffffff, 30, 0.5, 0, 0);
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+    background-color: var(--success-color);
+    color: white;
+    border-color: var(--success-color);
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
 }
 
 .option-button-incorrect {
-    -fx-background-color: linear-gradient(90deg, #ff0040 0%, #ff4080 50%, #ff0040 100%);
-    -fx-text-fill: #ffffff;
-    -fx-border-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, #ff0040, 25, 1.0, 0, 0),
-                dropshadow(gaussian, #ffffff, 30, 0.5, 0, 0);
-    -fx-scale-x: 1.02;
-    -fx-scale-y: 1.02;
+    background-color: var(--danger-color);
+    color: white;
+    border-color: var(--danger-color);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
 }
 
-/* Botón primario vibrante */
 .primary-button {
-    -fx-background-color: linear-gradient(135deg, #0080ff 0%, #00ffff 50%, #0080ff 100%);
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 16px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 3;
-    -fx-padding: 15 25 15 25;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #00ffff, 20, 0.7, 0, 0);
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
+    transition: all 0.2s ease;
 }
 
 .primary-button:hover {
-    -fx-background-color: linear-gradient(135deg, #ffffff 0%, #00ffff 50%, #ffffff 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #ffffff, 30, 1.0, 0, 0);
-    -fx-scale-x: 1.06;
-    -fx-scale-y: 1.06;
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transform: translateY(-1px);
 }
 
-/* Botón de volver estilizado */
 .back-button {
-    -fx-background-color: linear-gradient(90deg, #333333 0%, #666666 50%, #333333 100%);
-    -fx-text-fill: #00ff41;
-    -fx-font-size: 14px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #00ff41;
-    -fx-border-width: 2;
-    -fx-padding: 10 20 10 20;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #00ff41, 10, 0.4, 0, 0);
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 0.875rem;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transition: all 0.2s ease;
 }
 
 .back-button:hover {
-    -fx-background-color: linear-gradient(90deg, #00ff41 0%, #80ff80 50%, #00ff41 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #00ff41, 18, 0.7, 0, 0);
-    -fx-scale-x: 1.04;
-    -fx-scale-y: 1.04;
+    background-color: #475569;
+    box-shadow: 0 4px 8px var(--shadow-medium);
 }
 
-/* Botón de guardar especial */
 .save-button {
-    -fx-background-color: linear-gradient(135deg, #ff8000 0%, #ffaa40 50%, #ff8000 100%);
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 14px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-    -fx-padding: 12 20 12 20;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #ff8000, 15, 0.6, 0, 0);
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
+    background-color: var(--warning-color);
+    color: white;
+    font-size: 0.875rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    border: none;
+    padding: 0.875rem 1.5rem;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.3);
+    transition: all 0.2s ease;
 }
 
 .save-button:hover {
-    -fx-background-color: linear-gradient(135deg, #ffffff 0%, #ffaa40 50%, #ffffff 100%);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #ff8000, 25, 0.9, 0, 0);
-    -fx-scale-x: 1.05;
-    -fx-scale-y: 1.05;
+    background-color: var(--warning-hover);
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
 }
 
-/* Botones de acción secundarios */
 .btn-accion {
-    -fx-background-color: linear-gradient(90deg, #004080 0%, #0080ff 50%, #004080 100%);
-    -fx-text-fill: #ffffff;
-    -fx-font-size: 14px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: #ffffff;
-    -fx-border-width: 2;
-    -fx-padding: 10 18 10 18;
-    -fx-cursor: hand;
-    -fx-effect: dropshadow(gaussian, #0080ff, 12, 0.5, 0, 0);
-    -fx-background-radius: 6;
-    -fx-border-radius: 6;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.875rem;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px var(--shadow-light);
+    transition: all 0.2s ease;
 }
 
 .btn-accion:hover {
-    -fx-background-color: linear-gradient(90deg, #0080ff 0%, #40a0ff 50%, #0080ff 100%);
-    -fx-effect: dropshadow(gaussian, #0080ff, 20, 0.8, 0, 0);
-    -fx-scale-x: 1.04;
-    -fx-scale-y: 1.04;
+    background-color: var(--primary-hover);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* ===============================================
-   CAMPOS DE TEXTO ATRACTIVOS
+   CAMPOS DE TEXTO MODERNOS
    =============================================== */
 
 .txt-nuevo-perfil, TextField {
-    -fx-background-color: linear-gradient(180deg, #001a33 0%, #003366 100%);
-    -fx-text-fill: #ffffff;
-    -fx-prompt-text-fill: rgba(255, 255, 255, 0.6);
-    -fx-border-color: #00ffff;
-    -fx-border-width: 2;
-    -fx-font-size: 16px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-padding: 12 15 12 15;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-effect: dropshadow(gaussian, #00ffff, 8, 0.3, 0, 0);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
 }
 
-.txt-nuevo-perfil:focused, TextField:focused {
-    -fx-border-color: #ffffff;
-    -fx-effect: dropshadow(gaussian, #ffffff, 15, 0.7, 0, 0),
-                innershadow(gaussian, #00ffff, 5, 0.3, 0, 0);
-    -fx-background-color: linear-gradient(180deg, #003366 0%, #0066cc 100%);
+.txt-nuevo-perfil::placeholder {
+    color: var(--text-light);
+}
+
+.txt-nuevo-perfil:focus, TextField:focused {
+    border-color: var(--border-focus);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    background-color: #fafbfc;
 }
 
 /* ===============================================
-   TABLAS Y LISTAS IMPRESIONANTES
+   TABLAS MODERNAS
    =============================================== */
 
-/* TableView para leaderboard */
 .leaderboard-table {
-    -fx-background-color: linear-gradient(135deg, #001a00 0%, #003300 50%, #001a00 100%);
-    -fx-control-inner-background: transparent;
-    -fx-border-color: linear-gradient(45deg, #ffaa00, #ff8000, #ffaa00);
-    -fx-border-width: 4;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-radius: 12;
-    -fx-border-radius: 12;
-    -fx-effect: dropshadow(gaussian, #ffaa00, 20, 0.6, 0, 0);
+    background-color: var(--background-primary);
+    border: 2px solid var(--warning-color);
+    font-family: 'Roboto', sans-serif;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(217, 119, 6, 0.15);
 }
 
-/* TableView para partidas guardadas */
 .saved-games-table {
-    -fx-background-color: linear-gradient(135deg, #001133 0%, #002266 50%, #001133 100%);
-    -fx-control-inner-background: transparent;
-    -fx-border-color: linear-gradient(45deg, #00ffff, #0080ff, #00ffff);
-    -fx-border-width: 3;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-effect: dropshadow(gaussian, #00ffff, 15, 0.5, 0, 0);
+    background-color: var(--background-primary);
+    border: 2px solid var(--primary-color);
+    font-family: 'Roboto', sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
 }
 
-/* Headers de columnas espectaculares */
 .leaderboard-table .column-header,
 .saved-games-table .column-header {
-    -fx-background-color: linear-gradient(90deg, rgba(255, 170, 0, 0.8), rgba(255, 128, 0, 0.8));
-    -fx-text-fill: #ffffff;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-font-size: 14px;
-    -fx-border-color: #ffffff;
-    -fx-alignment: center;
-    -fx-effect: dropshadow(gaussian, #ffaa00, 8, 0.4, 0, 0);
+    background-color: var(--warning-color);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: none;
+    text-align: center;
+    padding: 1rem;
 }
 
 .saved-games-table .column-header {
-    -fx-background-color: linear-gradient(90deg, rgba(0, 255, 255, 0.8), rgba(0, 128, 255, 0.8));
-    -fx-effect: dropshadow(gaussian, #00ffff, 8, 0.4, 0, 0);
+    background-color: var(--primary-color);
 }
 
-/* Celdas de tabla con gradientes */
 .leaderboard-table .table-cell {
-    -fx-background-color: rgba(0, 255, 65, 0.1);
-    -fx-text-fill: #00ff41;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-font-size: 12px;
-    -fx-border-color: rgba(0, 255, 65, 0.3);
-    -fx-alignment: center;
-    -fx-effect: dropshadow(gaussian, #00ff41, 3, 0.2, 0, 0);
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    padding: 0.75rem;
 }
 
 .saved-games-table .table-cell {
-    -fx-background-color: rgba(0, 255, 255, 0.1);
-    -fx-text-fill: #00ffff;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-font-size: 12px;
-    -fx-border-color: rgba(0, 255, 255, 0.3);
-    -fx-alignment: center;
-    -fx-effect: dropshadow(gaussian, #00ffff, 3, 0.2, 0, 0);
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    padding: 0.75rem;
 }
 
-/* Filas seleccionadas con efectos increíbles */
 .leaderboard-table .table-row-cell:selected,
 .saved-games-table .table-row-cell:selected {
-    -fx-background-color: linear-gradient(90deg, #ffaa00, #ff8000);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #ffffff, 15, 0.8, 0, 0);
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px var(--shadow-medium);
 }
 
-.saved-games-table .table-row-cell:selected {
-    -fx-background-color: linear-gradient(90deg, #00ffff, #0080ff);
-}
-
-/* Filas hover */
 .leaderboard-table .table-row-cell:hover,
 .saved-games-table .table-row-cell:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.2);
-    -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow(gaussian, #ffffff, 8, 0.4, 0, 0);
+    background-color: var(--background-tertiary);
+    color: var(--text-primary);
 }
 
-/* ListView para perfiles */
+/* ===============================================
+   LISTAS MODERNAS
+   =============================================== */
+
 .list-perfiles, ListView {
-    -fx-background-color: linear-gradient(135deg, #001a33 0%, #003366 50%, #001a33 100%);
-    -fx-control-inner-background: transparent;
-    -fx-text-fill: #00ffff;
-    -fx-border-color: #00ffff;
-    -fx-border-width: 3;
-    -fx-font-size: 16px;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
-    -fx-effect: dropshadow(gaussian, #00ffff, 12, 0.5, 0, 0);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px var(--shadow-light);
 }
 
-/* Celdas de lista vibrantes */
 .list-perfiles .list-cell, ListView .list-cell {
-    -fx-background-color: rgba(0, 255, 255, 0.1);
-    -fx-text-fill: #ffffff;
-    -fx-font-family: '8BIT WONDER Nominal', monospace;
-    -fx-border-color: rgba(0, 255, 255, 0.3);
-    -fx-border-width: 1;
-    -fx-padding: 12 15 12 15;
-    -fx-effect: dropshadow(gaussian, #00ffff, 3, 0.2, 0, 0);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    font-family: 'Roboto', sans-serif;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 1.25rem;
 }
 
 .list-perfiles .list-cell:selected, ListView .list-cell:selected {
-    -fx-background-color: linear-gradient(90deg, #00ffff, #40ffff);
-    -fx-text-fill: #000000;
-    -fx-effect: dropshadow(gaussian, #ffffff, 12, 0.6, 0, 0);
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 .list-perfiles .list-cell:hover, ListView .list-cell:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.2);
-    -fx-text-fill: #ffffff;
-    -fx-effect: dropshadow(gaussian, #ffffff, 8, 0.4, 0, 0);
+    background-color: var(--background-secondary);
+    color: var(--text-primary);
 }
 
 /* ===============================================
@@ -500,82 +440,99 @@
    =============================================== */
 
 .menu-grid, .options-grid {
-    -fx-hgap: 8;
-    -fx-vgap: 12;
-    -fx-alignment: center;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .hbox-botones, .action-buttons-hbox {
-    -fx-alignment: center;
-    -fx-spacing: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 /* ===============================================
-   SCROLL BARS FUTURISTAS
+   SCROLL BARS MODERNOS
    =============================================== */
 
 .scroll-bar {
-    -fx-background-color: rgba(0, 255, 255, 0.2);
-    -fx-background-radius: 5;
+    background-color: var(--background-tertiary);
+    border-radius: 6px;
 }
 
 .scroll-bar .thumb {
-    -fx-background-color: linear-gradient(90deg, #00ffff, #0080ff);
-    -fx-background-insets: 2;
-    -fx-background-radius: 5;
-    -fx-effect: dropshadow(gaussian, #00ffff, 5, 0.3, 0, 0);
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    border: 2px solid var(--background-tertiary);
 }
 
 .scroll-bar .track {
-    -fx-background-color: rgba(0, 0, 0, 0.5);
-    -fx-background-insets: 0;
-    -fx-background-radius: 5;
+    background-color: var(--background-secondary);
+    border-radius: 6px;
 }
 
 /* ===============================================
-   EFECTOS DE FOCO ESPECTACULARES
+   EFECTOS DE FOCO MODERNOS
    =============================================== */
 
-.retro-container:focused,
-.menu-button:focused,
-.option-button:focused,
-.primary-button:focused,
-.back-button:focused,
-.save-button:focused,
-.txt-nuevo-perfil:focused,
-.list-perfiles:focused,
-.leaderboard-table:focused,
-.saved-games-table:focused,
-TextField:focused,
-ListView:focused {
-    -fx-border-color: #ffffff;
-    -fx-border-width: 3;
-    -fx-effect: dropshadow(gaussian, #ffffff, 20, 0.8, 0, 0),
-                dropshadow(gaussian, #00ffff, 30, 0.4, 0, 0);
+.retro-container:focus,
+.menu-button:focus,
+.option-button:focus,
+.primary-button:focus,
+.back-button:focus,
+.save-button:focus,
+.txt-nuevo-perfil:focus,
+.list-perfiles:focus,
+.leaderboard-table:focus,
+.saved-games-table:focus,
+TextField:focus,
+ListView:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
 }
 
 /* ===============================================
-   UTILIDADES ESPECIALES
+   UTILIDADES MODERNAS
    =============================================== */
 
-/* Efecto de parpadeo */
-.neon-blink {
-    -fx-effect: dropshadow(gaussian, #ff0080, 20, 1.0, 0, 0);
-}
-
-/* Separadores neón */
 .retro-separator {
-    -fx-background-color: linear-gradient(90deg, transparent, #00ffff, transparent);
-    -fx-min-height: 3;
-    -fx-max-height: 3;
-    -fx-effect: dropshadow(gaussian, #00ffff, 8, 0.5, 0, 0);
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    height: 1px;
+    margin: 1.5rem 0;
 }
 
-/* Bordes neón especiales */
 .neon-border {
-    -fx-border-color: linear-gradient(45deg, #ff0080, #00ffff, #ff0080);
-    -fx-border-width: 3;
-    -fx-effect: dropshadow(gaussian, #ffffff, 15, 0.6, 0, 0);
-    -fx-background-radius: 10;
-    -fx-border-radius: 10;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+}
+
+/* ===============================================
+   RESPONSIVE DESIGN
+   =============================================== */
+
+@media (max-width: 768px) {
+    .retro-container, .root-vbox {
+        padding: 1.5rem;
+    }
+    
+    .game-title {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .menu-button, .primary-button {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.875rem;
+    }
+    
+    .menu-button-primary {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
 }
