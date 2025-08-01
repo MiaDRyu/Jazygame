@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="10" styleClass="root-vbox" stylesheets="@/estiloRetro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PerfilController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label styleClass="label-titulo" text="Selecciona tu perfil" />
+
+    <ListView fx:id="listPerfiles" prefHeight="400" prefWidth="295" styleClass="list-perfiles" />
+
+    <TextField fx:id="txtNuevoPerfil" promptText="Nuevo perfil" styleClass="txt-nuevo-perfil" />
+
+    <HBox spacing="10" styleClass="hbox-botones">
+        <Button onAction="#crearPerfil" styleClass="btn-accion" text="Crear Perfil" />
+        <Button onAction="#seleccionarPerfil" styleClass="btn-accion" text="Seleccionar" />
+    </HBox>
+</VBox>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="15" styleClass="retro-container"
+      stylesheets="@/estiloRetro.css" xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.cargarPartidaController">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <Label text="💾 Selecciona una partida guardada" styleClass="section-title-save" />
+
+    <TableView fx:id="tablaPartidas" prefHeight="250" prefWidth="400" styleClass="saved-games-table">
+        <columns>
+            <TableColumn fx:id="colId" prefWidth="60" text="ID" styleClass="table-column-header" />
+            <TableColumn fx:id="colEtapa" prefWidth="120" text="Nivel" styleClass="table-column-header" />
+            <TableColumn fx:id="colPuntaje" prefWidth="120" text="Puntuación" styleClass="table-column-header" />
+            <TableColumn fx:id="colFecha" prefWidth="100" text="Fecha" styleClass="table-column-header" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER" spacing="15" styleClass="action-buttons-hbox">
+        <Button fx:id="btnSeleccionar" onAction="#clickSeleccionar"
+                text="Cargar Partida" styleClass="primary-button"/>
+        <Button onAction="#clickVolver" text="Volver" styleClass="back-button"/>
+    </HBox>
+</VBox>

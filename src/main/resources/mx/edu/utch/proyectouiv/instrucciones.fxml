@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="295.0" styleClass="retro-container" stylesheets="@/estiloRetro.css"
+            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.InstruccionesController">
+   <children>
+      <Label layoutX="28.0" layoutY="21.0" text="Instrucciones" styleClass="section-title" />
+
+      <Text layoutX="14.0" layoutY="69.0" wrappingWidth="268"
+            strokeType="OUTSIDE" strokeWidth="0.0" lineSpacing="3.0"
+            text="Este es un juego para la práctica de memorización y resolución de productos notables.&#10;&#10;Al iniciar el juego se muestra un producto notable. Tu objetivo es responder la mayor cantidad de preguntas correctamente y acumular puntos.&#10;&#10;Cada producto resuelto correctamente suma 1 punto.&#10;&#10;Puedes usar distintos perfiles y comparar las puntuaciones en el 'Leaderboard'.&#10;&#10;¡Buena suerte!"
+            styleClass="instructions-text" />
+
+      <Button fx:id="btnBack" layoutX="10.0" layoutY="350.0"
+              text="Volver" styleClass="back-button" />
+   </children>
+</AnchorPane>
