@@ -16,8 +16,6 @@ public class App extends Application {
 
         DatabaseSetup.initDatabase();
         ExpresionesControl.insertarExpresionesIniciales();
-        Font.loadFont(getClass().getResourceAsStream("/fonts/PressStart2P.ttf"), 12);
-
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("seleccionPerfil.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 295, 400);

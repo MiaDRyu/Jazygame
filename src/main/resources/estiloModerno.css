@@ -1,0 +1,108 @@
+/* ============================
+   FUENTE Y BASE DE TEXTOS
+   ============================ */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.root {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-text-fill: #1e293b; /* texto primario */
+    -fx-background-color: #f8fafc; /* fondo general */
+}
+
+/* ============================
+   LABELS GENERALES
+   ============================ */
+Label {
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 14px;
+}
+
+/* ============================
+   BOTONES MODERNOS
+   ============================ */
+Button {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: 500;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.15), 4, 0, 0, 2);
+}
+
+Button:hover {
+    -fx-background-color: #1d4ed8;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.25), 6, 0, 0, 4);
+}
+
+Button:pressed {
+    -fx-background-color: #1d4ed8;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 1);
+}
+
+/* ============================
+   CAMPOS DE TEXTO
+   ============================ */
+TextField, TextArea {
+    -fx-background-color: white;
+    -fx-text-fill: #1e293b;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 8 12;
+    -fx-font-size: 14px;
+}
+
+TextField:focused, TextArea:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(one-pass-box, rgba(59,130,246,0.2), 4, 0, 0, 0);
+}
+
+/* ============================
+   LISTAS
+   ============================ */
+ListView, TableView {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.1), 4, 0, 0, 2);
+}
+
+/* ============================
+   CELDAS DE LISTA
+   ============================ */
+.list-cell, .table-row-cell {
+    -fx-font-size: 14px;
+    -fx-padding: 10 15;
+    -fx-border-color: transparent transparent #e2e8f0 transparent;
+    -fx-background-color: white;
+}
+
+.list-cell:selected, .table-row-cell:selected {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+}
+
+.list-cell:hover, .table-row-cell:hover {
+    -fx-background-color: #e0f2fe;
+}
+
+/* ============================
+   BARRAS DE DESPLAZAMIENTO
+   ============================ */
+.scroll-bar {
+    -fx-background-color: #e2e8f0;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #64748b;
+    -fx-background-radius: 6;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 6;
+}

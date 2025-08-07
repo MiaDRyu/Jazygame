@@ -7,28 +7,46 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="295.0" styleClass="retro-container" stylesheets="@/estiloRetro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InicioController">
+<AnchorPane prefHeight="400.0" prefWidth="295.0"
+            stylesheets="@/estiloModerno.css"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controller.InicioController">
+
     <children>
-        <GridPane alignment="CENTER" layoutX="23.0" layoutY="101.0" prefHeight="243.0" prefWidth="249.0" styleClass="menu-grid">
+        <Label layoutX="16.0" layoutY="29.0" text="JazyGame" />
+
+        <GridPane layoutX="23.0" layoutY="101.0" prefHeight="243.0" prefWidth="249.0"
+                  alignment="CENTER">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
             </rowConstraints>
+
             <children>
-                <Button fx:id="btnNG" onAction="#clickNG" prefHeight="88.0" prefWidth="249.0" text="Nueva Partida" styleClass="menu-button-primary" />
-                <Button fx:id="btnLoad" onAction="#clickLoad" prefHeight="103.0" prefWidth="249.0" text="Cargar Partida" GridPane.rowIndex="1" styleClass="menu-button" />
-                <Button fx:id="btnLdb" onAction="#clickLdb" prefHeight="106.0" prefWidth="249.0" text="Leaderboard" GridPane.rowIndex="2" styleClass="menu-button" />
-                <Button fx:id="btnCp" onAction="#clickCp" prefHeight="103.0" prefWidth="249.0" text="Cambiar Perfil" GridPane.rowIndex="3" styleClass="menu-button" />
-                <Button fx:id="btnInst" onAction="#clickInst" prefHeight="101.0" prefWidth="249.0" text="Instrucciones" GridPane.rowIndex="4" styleClass="menu-button" />
+                <Button fx:id="btnNG" text="Nueva Partida" onAction="#clickNG"
+                        prefHeight="88.0" prefWidth="249.0" />
+
+                <Button fx:id="btnLoad" text="Cargar Partida" onAction="#clickLoad"
+                        GridPane.rowIndex="1" prefHeight="103.0" prefWidth="249.0" />
+
+                <Button fx:id="btnLdb" text="Leaderboard" onAction="#clickLdb"
+                        GridPane.rowIndex="2" prefHeight="106.0" prefWidth="249.0" />
+
+                <Button fx:id="btnCp" text="Cambiar Perfil" onAction="#clickCp"
+                        GridPane.rowIndex="3" prefHeight="103.0" prefWidth="249.0" />
+
+                <Button fx:id="btnInst" text="Instrucciones" onAction="#clickInst"
+                        GridPane.rowIndex="4" prefHeight="101.0" prefWidth="249.0" />
             </children>
         </GridPane>
-        <Label layoutX="16.0" layoutY="29.0" text="JazyGame" styleClass="game-title" />
-        <Label fx:id="lblProf" layoutX="16.0" layoutY="361.0" text="Perfil:" styleClass="profile-label" />
+
+        <Label fx:id="lblProf" layoutX="16.0" layoutY="361.0" text="Perfil:" />
     </children>
 </AnchorPane>

@@ -25,7 +25,7 @@ public class InstruccionesController {
 
             Stage stage = (Stage) btnBack.getScene().getWindow();
             stage.setScene(scene);
-            stage.setTitle("Inicio");
+            stage.setTitle("Menú Principal");
             stage.show();
         } catch (Exception e) {
             e.printStackTrace();

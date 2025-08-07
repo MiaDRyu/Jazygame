@@ -7,21 +7,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="15" styleClass="retro-container" stylesheets="@/estiloRetro.css"
+<VBox alignment="CENTER" spacing="15" styleClass="retro-container" stylesheets="@/estiloModerno.css"
       xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1"
       fx:controller="Controller.LeaderboardController">
     <padding>
         <Insets bottom="20" left="20" right="20" top="20" />
     </padding>
 
-    <Label text="🏆 Leaderboard de Perfiles" styleClass="section-title-trophy" />
+    <Label text="🏆 Leaderboard de Perfiles" />
 
-    <TableView fx:id="tblLeaderboard" prefHeight="280" prefWidth="400" styleClass="leaderboard-table">
+    <TableView fx:id="tblLeaderboard" prefHeight="280" prefWidth="400" >
         <columns>
-            <TableColumn fx:id="colNombre" prefWidth="200" text="Perfil" styleClass="table-column-header" />
-            <TableColumn fx:id="colHighscore" prefWidth="200" text="Puntuación Máxima" styleClass="table-column-header" />
+            <TableColumn fx:id="colNombre" prefWidth="200" text="Perfil" />
+            <TableColumn fx:id="colHighscore" prefWidth="200" text="Puntuación Máxima" />
         </columns>
     </TableView>
 
-    <Button onAction="#clickVolver" text="Volver al Menú" styleClass="back-button" />
+    <Button onAction="#clickVolver" text="Volver al Menú"  />
 </VBox>

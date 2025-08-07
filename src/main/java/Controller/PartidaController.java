@@ -3,13 +3,17 @@ package Controller;
 import database.SQLiteConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import model.Expresion;
 import model.Partida;
 import model.PartidaSesion;
 import model.Perfil;
+import mx.edu.utch.proyectouiv.App;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -152,7 +156,7 @@ public class PartidaController {
                 }
             }
 
-            if (expresionActual == null) return; // Protección por si no hay datos
+            if (expresionActual == null) return;
 
             lblExpresion.setText(expresionActual.getExpresion());
             List<String> opciones = new ArrayList<>();
@@ -216,6 +220,24 @@ public class PartidaController {
             cargarPregunta();
         } else {
             System.out.println("Incorrecto");
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Incorrecta");
+            alert.setHeaderText(null);
+            alert.setContentText("Respuesta Incorrecta, volviendo al menú principal");
+            alert.showAndWait();
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("inicio.fxml"));
+                Scene scene = new Scene(fxmlLoader.load());
+
+                Stage stage = (Stage) lblExpresion.getScene().getWindow();
+                stage.setScene(scene);
+                stage.setTitle("Menú Principal");
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 

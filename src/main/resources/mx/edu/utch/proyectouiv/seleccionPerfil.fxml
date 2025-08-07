@@ -8,19 +8,24 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="10" styleClass="root-vbox" stylesheets="@/estiloRetro.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PerfilController">
+<VBox alignment="CENTER" spacing="20"
+      stylesheets="@/estiloModerno.css"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="Controller.PerfilController">
+
     <padding>
-        <Insets bottom="20" left="20" right="20" top="20" />
+        <Insets top="30" right="30" bottom="30" left="30" />
     </padding>
 
-    <Label styleClass="label-titulo" text="Selecciona tu perfil" />
+    <Label text="Selecciona tu perfil" />
 
-    <ListView fx:id="listPerfiles" prefHeight="400" prefWidth="295" styleClass="list-perfiles" />
+    <ListView fx:id="listPerfiles" prefHeight="400" prefWidth="400" />
 
-    <TextField fx:id="txtNuevoPerfil" promptText="Nuevo perfil" styleClass="txt-nuevo-perfil" />
+    <TextField fx:id="txtNuevoPerfil" promptText="Nuevo perfil" />
 
-    <HBox spacing="10" styleClass="hbox-botones">
-        <Button onAction="#crearPerfil" styleClass="btn-accion" text="Crear Perfil" />
-        <Button onAction="#seleccionarPerfil" styleClass="btn-accion" text="Seleccionar" />
+    <HBox spacing="15">
+        <Button text="Crear Perfil" onAction="#crearPerfil" />
+        <Button text="Seleccionar" onAction="#seleccionarPerfil" />
     </HBox>
 </VBox>
