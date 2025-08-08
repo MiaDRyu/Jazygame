@@ -43,6 +43,9 @@ public class PartidaController {
     @FXML
     private Label lblExpresion;
 
+    @FXML
+    private Label lblPregunta;
+
     private Expresion expresionActual;
     private int etapa = 0;
     private int puntaje;
@@ -92,7 +95,11 @@ public class PartidaController {
                 if (generatedKeys.next()) {
                     int idGenerado = generatedKeys.getInt(1);
                     partida.setId(idGenerado);
-                    System.out.println("Partida guardada por primera vez con ID: " + idGenerado);
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Partida Guardada");
+                    alert.setHeaderText(null);
+                    alert.setContentText("Partida guardada por primera vez con ID: " + idGenerado);
+                    alert.showAndWait();
                 }
 
             } else {
@@ -102,11 +109,17 @@ public class PartidaController {
                 updatePs.setInt(2, partida.getPuntaje());
                 updatePs.setInt(3, partida.getId());
                 updatePs.executeUpdate();
-                System.out.println("Partida actualizada.");
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Guardado exitoso");
+                alert.setHeaderText(null);
+                alert.setContentText("Se ha guardado la partida");
+                alert.showAndWait();
             }
 
             Perfil perfil = partida.getPerfil();
             int puntajeActual = partida.getPuntaje();
+            boolean hayHighscore = false;
             if (puntajeActual > perfil.getHighscore()) {
                 String updateHighscoreSql = "UPDATE perfiles SET highscore = ? WHERE id_perfil = ?";
                 PreparedStatement highscorePs = conn.prepareStatement(updateHighscoreSql);
@@ -115,13 +128,17 @@ public class PartidaController {
                 highscorePs.executeUpdate();
 
                 perfil.setHighscore(puntajeActual);
-                System.out.println("Nuevo highscore actualizado para " + perfil.getNombre() + ": " + puntajeActual);
+                hayHighscore = true;
             }
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Guardar partida");
             alert.setHeaderText(null);
-            alert.setContentText("Tu progreso ha sido guardado.");
+            if (hayHighscore){
+                alert.setContentText("Tu progreso ha sido guardado. Tu puntaje más alto ahora es: "+perfil.getHighscore());
+            } else {
+                alert.setContentText("Tu progreso ha sido guardado.");
+            }
             alert.showAndWait();
 
         } catch (SQLException e) {
@@ -166,6 +183,7 @@ public class PartidaController {
 
             switch (etapa) {
                 case 0: // Preguntar tipo de expresión
+                    lblPregunta.setText("¿Qué tipo de expresión es esta?");
                     opciones.add(expresionActual.getTipoExpresion());
                     respuestaCorrecta = expresionActual.getTipoExpresion();
 
@@ -175,6 +193,7 @@ public class PartidaController {
                     break;
 
                 case 1: // Preguntar tipo de solución
+                    lblPregunta.setText("¿Qué producto obtenemos al factorizarla?");
                     opciones.add(expresionActual.getTipoSolucion());
                     respuestaCorrecta = expresionActual.getTipoSolucion();
 
@@ -184,6 +203,7 @@ public class PartidaController {
                     break;
 
                 case 2: // Preguntar solución
+                    lblPregunta.setText("Cuál es la respuesta?");
                     opciones.add(expresionActual.getSolucion());
                     respuestaCorrecta = expresionActual.getSolucion();
 
@@ -215,7 +235,11 @@ public class PartidaController {
 
     public void comprobarRespuesta(String respuestaSeleccionada){
         if (respuestaSeleccionada.equals(respuestaCorrecta)) {
-            System.out.println("¡Correcto!");
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Correcta!");
+            alert.setHeaderText(null);
+            alert.setContentText("Respuesta correcta!");
+            alert.showAndWait();
             etapa++;
             cargarPregunta();
         } else {

@@ -7,15 +7,11 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane prefHeight="400.0" prefWidth="295.0" styleClass="retro-container" stylesheets="@/estiloModerno.css"
-            xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Controller.PartidaController">
+<AnchorPane prefHeight="400.0" prefWidth="295.0" styleClass="retro-container" stylesheets="@/estiloModerno.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PartidaController">
     <children>
-        <Label fx:id="lblExpresion" layoutX="33.0" layoutY="27.0" text="Expresión"
-                />
+        <Label fx:id="lblExpresion" layoutX="128.0" layoutY="25.0" text="Expresión" />
 
-        <GridPane layoutX="33.0" layoutY="98.0" prefHeight="224.0" prefWidth="230.0"
-                  >
+        <GridPane layoutX="33.0" layoutY="98.0" prefHeight="224.0" prefWidth="230.0">
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
@@ -26,25 +22,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <Button fx:id="btnA" mnemonicParsing="false" onAction="#clickA"
-                        prefHeight="159.0" prefWidth="230.0" text="a)"
-                         />
+                <Button fx:id="btnA" mnemonicParsing="false" onAction="#clickA" prefHeight="159.0" prefWidth="230.0" text="a)" />
 
-                <Button fx:id="btnB" mnemonicParsing="false" onAction="#clickB"
-                        prefHeight="123.0" prefWidth="230.0" text="b)" GridPane.rowIndex="1"
-                         />
+                <Button fx:id="btnB" mnemonicParsing="false" onAction="#clickB" prefHeight="123.0" prefWidth="230.0" text="b)" GridPane.rowIndex="1" />
 
-                <Button fx:id="btnC" mnemonicParsing="false" onAction="#clickC"
-                        prefHeight="115.0" prefWidth="230.0" text="c)" GridPane.rowIndex="2"
-                         />
+                <Button fx:id="btnC" mnemonicParsing="false" onAction="#clickC" prefHeight="115.0" prefWidth="230.0" text="c)" GridPane.rowIndex="2" />
 
-                <Button fx:id="btnD" mnemonicParsing="false" onAction="#clickD"
-                        prefHeight="118.0" prefWidth="230.0" text="d)" GridPane.rowIndex="3"
-                        />
+                <Button fx:id="btnD" mnemonicParsing="false" onAction="#clickD" prefHeight="118.0" prefWidth="230.0" text="d)" GridPane.rowIndex="3" />
             </children>
         </GridPane>
 
-        <Button fx:id="btnSave" layoutX="98.0" layoutY="364.0" mnemonicParsing="false"
-                onAction="#clickSave" text="Guardar Progreso"  />
+        <Button fx:id="btnSave" layoutX="80.0" layoutY="364.0" mnemonicParsing="false" onAction="#clickSave" text="Guardar Progreso" />
+      <Label fx:id="lblPregunta" layoutX="10.0" layoutY="60.0" text="Pregunta" />
     </children>
 </AnchorPane>

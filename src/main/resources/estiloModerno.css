@@ -6,7 +6,7 @@
 .root {
     -fx-font-family: 'Roboto', sans-serif;
     -fx-text-fill: #1e293b; /* texto primario */
-    -fx-background-color: #f8fafc; /* fondo general */
+    -fx-background-color: #ffc8dd; /* fondo general */
 }
 
 /* ============================
@@ -21,7 +21,7 @@ Label {
    BOTONES MODERNOS
    ============================ */
 Button {
-    -fx-background-color: #2563eb;
+    -fx-background-color: #a2d2ff;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: 500;
@@ -32,7 +32,7 @@ Button {
 }
 
 Button:hover {
-    -fx-background-color: #1d4ed8;
+    -fx-background-color: #bde0fe;
     -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.25), 6, 0, 0, 4);
 }
 
@@ -45,8 +45,8 @@ Button:pressed {
    CAMPOS DE TEXTO
    ============================ */
 TextField, TextArea {
-    -fx-background-color: white;
-    -fx-text-fill: #1e293b;
+    -fx-background-color: #cdb4db;
+    -fx-text-fill: #000000;
     -fx-border-color: #cbd5e1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
@@ -55,7 +55,7 @@ TextField, TextArea {
 }
 
 TextField:focused, TextArea:focused {
-    -fx-border-color: #3b82f6;
+    -fx-border-color: #ffafcc;
     -fx-effect: dropshadow(one-pass-box, rgba(59,130,246,0.2), 4, 0, 0, 0);
 }
 
@@ -63,7 +63,7 @@ TextField:focused, TextArea:focused {
    LISTAS
    ============================ */
 ListView, TableView {
-    -fx-background-color: white;
+    -fx-background-color: #cdb4db;
     -fx-border-color: #cbd5e1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
@@ -77,16 +77,16 @@ ListView, TableView {
     -fx-font-size: 14px;
     -fx-padding: 10 15;
     -fx-border-color: transparent transparent #e2e8f0 transparent;
-    -fx-background-color: white;
+    -fx-background-color: #cdb4db;
 }
 
 .list-cell:selected, .table-row-cell:selected {
-    -fx-background-color: #2563eb;
+    -fx-background-color: #a2d2ff;
     -fx-text-fill: white;
 }
 
 .list-cell:hover, .table-row-cell:hover {
-    -fx-background-color: #e0f2fe;
+    -fx-background-color: #bde0fe;
 }
 
 /* ============================
